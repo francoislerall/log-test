@@ -1,6 +1,5 @@
 package logging;
 
-import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import ch.qos.logback.classic.encoder.PatternLayoutEncoder;

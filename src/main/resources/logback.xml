@@ -26,6 +26,9 @@
     </appender>
 
     <appender name="POPUP" class="logging.PopUpAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
@@ -33,13 +36,11 @@
 
     <logger name="example" level="INFO">
         <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="example" level="ERROR">
+        <!-- Note that the level of the popup appender is set with the appender filter. -->
         <appender-ref ref="POPUP"/>
     </logger>
 
-    <root level="DEBUG">
+    <root level="WARN">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>

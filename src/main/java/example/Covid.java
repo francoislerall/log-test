@@ -1,7 +1,11 @@
 package example;
 
+import java.util.Random;
+
+import logging.LoggerConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 public class Covid {
 
@@ -21,7 +25,7 @@ public class Covid {
             logger.debug("Number of Covid cases set to {}. Old number of cases was {}.", cases, oldCases);
 
             if (cases > 3) {
-                logger.info("Please work from home!");
+                logger.warn("Please work from home!");
             }
         }
     }
@@ -32,11 +36,20 @@ public class Covid {
 
     public static void main(String[] args) {
         logger.info("Entering application.");
+        example();
+        logger.info("Resetting up the log level");
+        LoggerConfig.setUp();
+        example();
+    }
 
+    public static void example() {
         Covid covid = new Covid();
+        covid.setCases(0);
         covid.setCases(2);
-        covid.setCases(4);
+        covid.setCases(5);
         covid.setCases(-1);
-        logger.info("Exiting application.");
+        covid.setCases(0);
+        covid.setCases(2);
+        covid.setCases(5);
     }
 }
