@@ -12,10 +12,12 @@
   - a log file cannot exceed 3Mb,
   - a new file is created every day;
 - different logging configurations for `main` and `test`.
-- pop-up appender
+- pop-up appender;
+- log file in HTML format;
+- dynamic logging level adjustment.
 
 ### In progress:
-- dynamic logging level adjustment
+- 
 
 ## Migration to `logback`
 
